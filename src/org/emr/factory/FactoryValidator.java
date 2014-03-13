@@ -15,7 +15,7 @@ public class FactoryValidator{
 	@Autowired
 	Model model;
 	public void validate(Object bean) {
-		System.out.println("FactoryValidator.validate");
+		System.out.println("FactoryValidator.validate ");
 		Class cls;
 		try {
 			System.out.println(" in Factory Validator");
