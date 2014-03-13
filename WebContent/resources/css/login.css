@@ -1,0 +1,31 @@
+/* 
+    Document   : login
+    Created on : 12 Nov, 2013, 5:48:26 PM
+    Author     : nishith
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+.loginbox{
+    width: 400px;
+    height: 150px;
+    border: 2px black solid;
+    border-radius: 10px;
+    margin: 1px auto;
+    text-align: center;
+}
+
+.loginbox td{
+    width: 190px;
+    padding-top: 15px;
+}
+
+.textbox{
+    border: 1px black solid;
+    height: 25px;
+    border-radius: 5px;
+}
