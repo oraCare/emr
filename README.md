@@ -19,3 +19,4 @@ javax-persistence.jar
 commons-collections.jar
 javassists.jar
 json.jar
+#new changes
