@@ -8,7 +8,7 @@ xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/
 	     <param-name>contextConfigLocation</param-name><param-value>classpath:applicationContext.xml</param-value>
 	     </context-param>
   <servlet>
-    <servlet-name>EMR</servlet-name>
+    <servlet-name>plus</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
     <init-param>
             <param-name>contextConfigLocation</param-name>
@@ -17,8 +17,8 @@ xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/
     <load-on-startup>1</load-on-startup>
   </servlet>
   <servlet-mapping>
-    <servlet-name>EMR</servlet-name>
-    <url-pattern>*.html</url-pattern>
+    <servlet-name>plus</servlet-name>
+    <url-pattern>*.htm</url-pattern>
   </servlet-mapping>
  
   <welcome-file-list>
