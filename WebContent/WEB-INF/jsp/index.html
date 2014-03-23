@@ -24,7 +24,7 @@ and open the template in the editor.
     <body>
         <!--<div class="anglebar"></div>-->
         <div class="headbar">
-            <nav class="navbar" role="navigation">
+            <nav class="navbar " >
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -35,32 +35,45 @@ and open the template in the editor.
                     </button>
                     <a class="navbar-brand" href="#">plus</a>
                 </div>
-
+				
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="active" data-toggle="modal" data-target="#myModal"><a href="#"><span class="glyphicon glyphicon-th"></span> Modules</a></li>
-                        <li><a href="#">Link</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
-                                <li><a href="#">Separated link</a></li>
-                                <li><a href="#">One more separated link</a></li>
+				<ul class="nav navbar-nav navbar-right">
+					<li class="navbar-form navbar-left">
+							<div class="input-group">
+								<div class="input-group-btn" >
+								<a href="#" class="btn btn-default dropdown-toggle" style="border-top-left-radius: 18px; border-bottom-left-radius: 18px;" data-toggle="dropdown">
+										<span class="glyphicon glyphicon-th"></span>
+									</a>
+									<ul class="dropdown-menu" style="left: 40px;">
+										<li><a href="#">Search type1</a></li>
+										<li><a href="#">Search type2</a></li>
+										<li><a href="#">Search type3</a></li>
+										<li class="divider"></li>
+										<li><a href="#">Search type4</a></li>
+									</ul>
+								</div>
+								<!-- /btn-group -->
+								
+								
+								<input type="text" class="form-control"></input>
+							
+								
+							</div>
+							
+							<!-- /input-group -->
+					</li>
+					<li><a href="#" class="dropdown-toggle" data-toggle="dropdown">Get Help</a>
+                        	<ul class="dropdown-menu">
+                                <li><a href="#">Live Chat</a></li>
+                                <li><a href="#">Call</a></li>
                             </ul>
                         </li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">Link</a></li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">User </a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
-                                <li><a href="#">Separated link</a></li>
+                                <li><a href="#">Settings</a></li>
+                                <li><a href="#">Logout</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -70,7 +83,7 @@ and open the template in the editor.
         <div class="contentmanager">
             <div id="wrapper">
 
-                <div class="navbar navbar-side navbar-inverse navbar-fixed-top" role="navigation" style="margin-top: 52px;">
+                <div class="navbar navbar-side 	 navbar-fixed-top" role="navigation" style="margin-top: 52px;">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                             <span class="sr-only">Toggle navigation</span>
