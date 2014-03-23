@@ -56,7 +56,7 @@ public class ApplicationController {
     }
     @RequestMapping(value = "/test")
     public ModelAndView getTest(){
-    	System.out.println("request for test ");
+    	System.out.println("request for test egit test ");
         ModelAndView mv = new ModelAndView();
         mv.setViewName("index.html");
         return mv;
