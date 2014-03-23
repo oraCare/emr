@@ -29,7 +29,6 @@
         </property>
     </bean>
     <mvc:interceptors>
-        <bean class="org.emr.intercepter.RequestInterceptor"/>
         <mvc:interceptor>
             <mvc:mapping path="/**"/>
             <bean class="org.emr.intercepter.RequestInterceptor"/>
