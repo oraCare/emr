@@ -7,8 +7,11 @@ package org.emr.controller;
 
 import org.emr.entity.PageDetail;
 import org.emr.factory.Model;
+import org.emr.intercepter.RequestInterceptor;
 
 import org.json.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,7 +25,10 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @Controller
 public class ApplicationController {
-
+	static Logger logger;
+	static {
+		logger = LoggerFactory.getLogger(RequestInterceptor.class.getName());
+	}
     @Autowired
     Model model;
 
@@ -50,15 +56,24 @@ public class ApplicationController {
     }
     @RequestMapping(value = "/test")
     public ModelAndView getTest(){
-//    public @ResponseBody String getTest(){
+    	System.out.println("request for test ");
         ModelAndView mv = new ModelAndView();
-        mv.setViewName("test.html");
+        mv.setViewName("index.html");
         return mv;
-//        return "Nishith";
+    }
+    @RequestMapping(value = "/test1")
+    public ModelAndView responseJson(){
+    	System.out.println("request for test ");
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("manage.html");
+        return mv;
     }
     @RequestMapping(value = "/data")
     @ResponseBody
     public String getJSON() {
+    	logger.debug("debug info : ");
+    	logger.info("info info ");
+    	logger.error("error message error ");
         PageDetail pageDetail = new PageDetail();
 //    	factoryBean.setId(1l);
 //    	ArrayList<FactoryBean> beanList = model.getBeanList(factoryBean);
