@@ -22,7 +22,7 @@
 	   <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
 		destroy-method="close">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3306/message" />
+		<property name="url" value="jdbc:mysql://localhost:3306/emr" />
 		<property name="username" value="root" />
 		<property name="password" value="root10" />
 	</bean>
@@ -36,13 +36,12 @@
              <prop key="hibernate.show_sql">true</prop>
           </props>
        </property>
-      <!-- <property name="mappingResources">  
+   	<property name="mappingResources">  
     <list>  
     <value>mapping.hbm.xml</value>  
     </list>  
     </property>
-     --> 
-       <property name="packagesToScan" value="org.emr" />
+    <property name="packagesToScan" value="org.emr" />
     </bean>
 <tx:annotation-driven transaction-manager="transactionManager"/>	
 	<bean id="transactionManager"

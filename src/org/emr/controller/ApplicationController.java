@@ -5,7 +5,12 @@
  */
 package org.emr.controller;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+
+import org.emr.bean.LoginBean;
 import org.emr.entity.PageDetail;
+import org.emr.factory.FactoryBean;
 import org.emr.factory.Model;
 import org.emr.intercepter.RequestInterceptor;
 
@@ -56,6 +61,9 @@ public class ApplicationController {
     }
     @RequestMapping(value = "/test")
     public ModelAndView getTest(){
+    	ArrayList<FactoryBean>factoryBean = model.getBeanList(new LoginBean());
+    	if(factoryBean!= null)
+    		System.out.println("login bean is not null");
     	System.out.println("request for test.htm ");
         ModelAndView mv = new ModelAndView();
         mv.setViewName("index.html");
