@@ -23,5 +23,7 @@ public interface Model {
     public void delete(FactoryBean factoryBean);
     @Transactional
     public String getValidatorForBean(String beanName);
+    @Transactional
+    public FactoryBean getBean(String className);
         
 }

@@ -36,11 +36,19 @@ public class ApplicationController {
 	}
     @Autowired
     Model model;
+    @RequestMapping(value="/login")
+    public ModelAndView throwLogin(){
+    	System.out.println("login action called : ");
+    	ModelAndView mv = new ModelAndView();
+    	mv.setViewName("login.html");
+    	return mv;
+    }
 
     @RequestMapping(value =  "/page")
     public ModelAndView home(@RequestParam("json") String jsonString) {
         ModelAndView mv = new ModelAndView();
         JSONObject json;
+        System.out.println("page request");
         try {
             System.out.println(jsonString);
             json = new JSONObject(jsonString);
@@ -59,7 +67,7 @@ public class ApplicationController {
 //        mv.setViewName("index.html");
         return mv;
     }
-    @RequestMapping(value = "/test")
+    @RequestMapping(value = "/do")
     public ModelAndView getTest(){
     	ArrayList<FactoryBean>factoryBean = model.getBeanList(new LoginBean());
     	if(factoryBean!= null)

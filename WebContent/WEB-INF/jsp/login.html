@@ -23,7 +23,7 @@ and open the template in the editor.
         </script>
     </head>
     <body style="background-color: lightgray;">
-        <form action="#"></form>
+        <form action="do.htm" method="post">
         <div class="logindialog" id="logindialog">
             <div class="panel panel-primary">
                 <div class="panel-heading">
@@ -32,18 +32,19 @@ and open the template in the editor.
                 <div class="panel-body">
                     <div class="input-group input-group-lg">
                         <span class="input-group-addon">Username&Tab;</span>
-                        <input type="text" class="form-control" placeholder="Username">
+                        <input name="username" type="text" class="form-control" placeholder="Username">
                     </div>
                     <br>
                     <div class="input-group input-group-lg">
                         <span class="input-group-addon">Password&Tab;</span>
-                        <input type="password" class="form-control" placeholder="Password">
+                        <input type="password" name="password" class="form-control" placeholder="Password">
                     </div>
                 </div>
                 <div class="panel-footer">
-                    <div align="right"><button type="button" class="btn btn-primary">Login</button></div>
+                    <div align="right"><input type="submit" class="btn btn-primary" value="Login" name="Login"/></div>
                 </div>
             </div>
         </div>
+        </form>
     </body>
 </html>

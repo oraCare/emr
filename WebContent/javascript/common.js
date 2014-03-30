@@ -1,5 +1,5 @@
-APPLICATION_CONTEXT = "/MyJournal/";
-APPLICATION_CONTROLLER = "controller";
+APPLICATION_CONTEXT = "/plus/";
+APPLICATION_CONTROLLER = "do.htm";
 APPLICATION_DOMAIN = "";
 APPLICATION_PAGE_OBJECT = "";
 UserEditCheckBox = [];
@@ -35,7 +35,7 @@ function sendAJAXRequest(method, query, bingo) {
             //redirect(JSON.parse(data));
             console.log(data);
             var fn = window[bingo];
-            fn(data);
+            //fn(data);
         }
     };
     if (method === "GET") {

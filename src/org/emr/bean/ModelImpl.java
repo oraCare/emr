@@ -71,8 +71,16 @@ public class ModelImpl implements Model {
 	//							select name from fbeanvalidator where beanid = (select id from fbean where name = 'org.emr.bean.UserBean');
 		return session.createSQLQuery("select name from fbeanvalidator where beanid = (select id from fbean where name ='" +beanName + "')").uniqueResult().toString();
 	}
+	
     public void className(Class className){
         System.out.println(":::::::::::::::::::::::::::::::::::"+className.getClass());
     }
+
+	@Override
+	@Transactional
+	public FactoryBean getBean(String className) {
+		
+		return null;
+	}
 
 }

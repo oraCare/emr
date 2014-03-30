@@ -36,11 +36,6 @@
              <prop key="hibernate.show_sql">true</prop>
           </props>
        </property>
-   	<property name="mappingResources">  
-    <list>  
-    <value>mapping.hbm.xml</value>  
-    </list>  
-    </property>
     <property name="packagesToScan" value="org.emr" />
     </bean>
 <tx:annotation-driven transaction-manager="transactionManager"/>	
