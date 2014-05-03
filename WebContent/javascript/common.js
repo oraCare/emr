@@ -24,7 +24,6 @@ function getAJAXObject() {
     }
     return ajaxObject;
 }
-
 function sendAJAXRequest(method, query, bingo) {
     xmlObject = getAJAXObject();
     var currentPath = window.location.toString();
@@ -35,7 +34,7 @@ function sendAJAXRequest(method, query, bingo) {
             //redirect(JSON.parse(data));
             console.log(data);
             var fn = window[bingo];
-            //fn(data);
+            fn(data);
         }
     };
     if (method === "GET") {

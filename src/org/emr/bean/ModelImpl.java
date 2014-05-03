@@ -41,6 +41,7 @@ public class ModelImpl implements Model {
     public ArrayList<FactoryBean> getBeanList(FactoryBean factoryBean) {
         System.out.println(" class name == " + factoryBean.getClass().getName());
         ArrayList<FactoryBean> beanList = (ArrayList<FactoryBean>) sessionFactory.getCurrentSession().createQuery("from " + factoryBean.getClass().getName()).list();
+        System.out.println("beans generated from table" + beanList);
         return beanList;
     }
 
@@ -81,6 +82,13 @@ public class ModelImpl implements Model {
 	public FactoryBean getBean(String className) {
 		
 		return null;
+	}
+
+	@Override
+	@Transactional
+	public Session getSession() {
+		Session session = sessionFactory.getCurrentSession();
+		return session;
 	}
 
 }

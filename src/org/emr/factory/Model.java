@@ -2,6 +2,9 @@ package org.emr.factory;
 
 import java.util.ArrayList;
 
+import javax.persistence.Query;
+
+import org.hibernate.Session;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
@@ -25,5 +28,6 @@ public interface Model {
     public String getValidatorForBean(String beanName);
     @Transactional
     public FactoryBean getBean(String className);
-        
+    @Transactional
+    public Session getSession();
 }

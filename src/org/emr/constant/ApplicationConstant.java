@@ -14,7 +14,7 @@ import java.util.ArrayList;
  */
 public class ApplicationConstant {
     public static final ArrayList<String> TYPE_PRIMARY_LIST = new ArrayList<String>();
-    
+    final static String REQID = "REQID";
     static {
         TYPE_PRIMARY_LIST.add("string");
         TYPE_PRIMARY_LIST.add("integer");

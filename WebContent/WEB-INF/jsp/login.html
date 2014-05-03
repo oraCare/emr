@@ -24,6 +24,8 @@ and open the template in the editor.
     </head>
     <body style="background-color: lightgray;">
         <form action="do.htm" method="post">
+        <input type="hidden" name="requestid" value="0"/>
+        <input type="hidden" name="json" value='{"login":"req"}'/>
         <div class="logindialog" id="logindialog">
             <div class="panel panel-primary">
                 <div class="panel-heading">

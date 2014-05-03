@@ -8,13 +8,12 @@ public class ProfileBean extends FactoryBean{
 	@Override
 	public Long getId() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.id;
 	}
 
 	@Override
 	public void setId(Long id) {
-		// TODO Auto-generated method stub
-		
+		this.id = id;
 	}
 
 	public String getName() {

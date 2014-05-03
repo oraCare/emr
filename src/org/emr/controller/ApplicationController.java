@@ -5,8 +5,15 @@
  */
 package org.emr.controller;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.emr.bean.LoginBean;
 import org.emr.entity.PageDetail;
@@ -14,6 +21,7 @@ import org.emr.factory.FactoryBean;
 import org.emr.factory.Model;
 import org.emr.intercepter.RequestInterceptor;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -67,11 +75,51 @@ public class ApplicationController {
 //        mv.setViewName("index.html");
         return mv;
     }
+    public static JSONObject getRequestParamMap(HttpServletRequest request){
+                JSONObject jsonObject = null;
+                try {
+                        if(request.getParameter("json") !=null)
+                                jsonObject = new JSONObject(request.getParameter("json"));
+                        else
+                                jsonObject = new JSONObject();
+                        if(request.getParameter("elementid")!=null)
+                                jsonObject.put("elementid", request.getParameter("elementid"));
+                        if(request.getParameter("ipType")!=null)
+                                jsonObject.put("ipType", request.getParameter("ipType"));
+                        jsonObject.put("REQID", request.getParameter("requestid"));
+                        jsonObject.put("__RequestType", (request.getParameter("json")!=null?"2":"1"));
+                } catch (Exception e) {
+                	System.out.println("ApplicationController : getRequestParamMap  : ERROR" );
+                	e.printStackTrace();
+                }
+                return jsonObject;
+        }
+
     @RequestMapping(value = "/do")
-    public ModelAndView getTest(){
-    	ArrayList<FactoryBean>factoryBean = model.getBeanList(new LoginBean());
-    	if(factoryBean!= null)
-    		System.out.println("login bean is not null");
+    public ModelAndView getTest(HttpServletRequest request,HttpServletResponse response) throws JSONException, IOException{
+    	System.out.println("ApplicationController : do.htm x`");
+    	JSONObject requestParamMap = null;
+    	/*
+    	 * get parameters from request 
+    	 */
+    	requestParamMap = getRequestParamMap(request);
+    	if(requestParamMap!=null){
+    		if(requestParamMap.has("REQID")){
+				System.out.println("req param map : "
+						+ requestParamMap.getString("REQID"));
+				if (requestParamMap.getString("REQID").equals("1")) {
+					System.out
+							.println("ApplicationController : json not null : ");
+					PrintWriter printWriter = response.getWriter();
+					printWriter.print(((LoginBean) request.getSession()
+							.getAttribute("loginBean")).getUsername());
+					printWriter.close();
+					System.out
+							.println("ApplicationController : return model and view ");
+					return null;
+				}
+    		}
+    	}
     	System.out.println("request for test.htm ");
         ModelAndView mv = new ModelAndView();
         mv.setViewName("index.html");
